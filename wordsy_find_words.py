@@ -34,6 +34,7 @@ location_points = {
 game_letters = None
 
 threshold = 65
+word_count_to_keep = 42
 
 ###### FILE HANDLING ############################################################################################################
 def read_files():
@@ -198,7 +199,8 @@ def main():
     letters, words = read_files()
     print("starting")
     i = 0
-    while len(words) > 42:
+    global word_count_to_keep
+    while len(words) > word_count_to_keep:
         if i%10000 == 0:
             global threshold
             threshold = threshold+1
